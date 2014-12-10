@@ -25,28 +25,23 @@ public class MovieDataMiner {
 
 		@Override
 		public void map(LongWritable key, Text val, Context context) throws IOException, InterruptedException {
-			/* Split up the files */
-			//FileSplit fileSplit = (FileSplit) context.getInputSplit();
-
-			/* Get our filename */
-			//String fileName = fileSplit.getPath().getName();
-
-			/* Set location to the filename */
-			// rating.set(fileName);
-
 			/* Get line from val to tokenize */
 			String line = val.toString();
 
-			/* Create our tokenizer (strip non-words) */
-			StringTokenizer itr = new StringTokenizer(line.toLowerCase(), " , .;:'\"&!?-_\n\t12345678910[]{}<>\\`~|=^()@#$%^*/+-");
+			/* Create our tokenizer (strip punctuation) */
+			StringTokenizer itr = new StringTokenizer(line.toLowerCase(), " , .;:'\"&!?-_\n\t[]<>\\`~|=^()@#$%^*/+-");
 
-			/*
-			 * For each word, set it and write it along with where it was found
-			 * (word as our key)
-			 */
+			/* For each data set, map the year and rating w/ year as key */
+			String token;
 			while (itr.hasMoreTokens()) {
-				year.set(itr.nextToken());
-				context.write(year, rating);
+				token = itr.nextToken();
+				
+				if(token.equals("{"))
+				{
+					year.set(itr.nextToken());
+					rating.set(itr.nextToken());
+					context.write(year, rating);
+				}
 			}
 		}
 	}
