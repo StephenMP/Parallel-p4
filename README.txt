@@ -25,9 +25,10 @@ Files
 ======
 src
   |_
-	MovieDataMiner.java
+	MovieDataMiner.java		//Driver
 	MovieData.java
-MovieDataMiner.jar
+MovieDataMiner.jar			// Our jar file
+movie_data.txt				// Our sample data
 README.txt
 
 =====
