@@ -57,9 +57,9 @@ public class MovieDataMiner {
 				decade = Integer.parseInt(key.toString());
 
 				if (decadesTable.containsKey(decade))
-					decadesTable.get(decade).addMovieData(Integer.parseInt(next.toString()));
+					decadesTable.get(decade).addMovieData(next.toString());
 				else
-					decadesTable.put(decade, new MovieData(Integer.parseInt(next.toString())));
+					decadesTable.put(decade, new MovieData(next.toString()));
 			}
 
 			/* For each decade, get our data */

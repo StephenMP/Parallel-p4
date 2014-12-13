@@ -1,17 +1,19 @@
 public class MovieData {
-	private int avgRating, numReleased;
+	private double avgRating;
+	private int numReleased;
 
-	public MovieData(int rating){
-		this.avgRating = rating;
+	public MovieData(String rating){
+		this.avgRating = Double.parseDouble(rating);
 		numReleased = 1;
 	}
 	
-	public void addMovieData(int rating){
-		this.avgRating = (avgRating + rating)/2;
+	public void addMovieData(String rating){
+		double avgRating = Double.parseDouble(rating);
+		this.avgRating = (avgRating + this.avgRating)/2;
 		numReleased++;
 	}
 
-	public int getAvgRating() {
+	public double getAvgRating() {
 		return avgRating;
 	}
 

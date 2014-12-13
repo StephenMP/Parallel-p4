@@ -33,7 +33,7 @@ README.txt
 =====
 Data
 =====
-Trend 1: We found that the decade with the highest average ratings was the 1980's with an average rating of 4
+Trend 1: We found that the decade with the highest average ratings was the 1980's with an average rating of 4.33
 Trend 2: We found that the decade which released the most amount of movies was the 1990's with 6412 releases
 
 ===========
